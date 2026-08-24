@@ -1,0 +1,14 @@
+progetto_basi/
+├── docker-compose.yml
+├── cassandra_schema.cql
+├── neo4j_schema.cypher
+├── requirements.txt
+├── generate_data.py
+├── insert_data.py
+├── benchmark.py
+├── analyze_results.py
+└── data/
+    ├── 25/
+    ├── 50/
+    ├── 75/
+    └── 100/
