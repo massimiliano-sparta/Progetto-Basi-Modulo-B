@@ -4,7 +4,7 @@ Progetto per il modulo NoSQL del corso di Basi di Dati, Corso di Laurea in Infor
 
 Confronto sperimentale tra un database a grafo (**Neo4j 5.24**) e un database wide column (**Apache Cassandra 4.1**) sullo stesso caso di studio: un sistema di prenotazione voli. Quattro query di complessità crescente, quattro dataset annidati (25%, 50%, 75%, 100%), 31 esecuzioni per configurazione con intervalli di confidenza al 95% sulla media a regime.
 
-**Autori:** Massimiliano Spartà (matricola 566093), Simone Adamo (matricola 567317)
+**Autori:** Massimiliano Spartà (matricola 566093) e Simone Adamo (matricola 567317)
 
 ## Risultato in breve
 
