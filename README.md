@@ -102,7 +102,7 @@ python Python/analyze_results.py
 
 `Istruzioni_bash/run_experiments.sh` automatizza l'intero esperimento: per ciascuno dei quattro dataset ricrea da zero entrambi i container (elimina il problema di `MemoryPoolOutOfMemoryError` su cancellazioni massive in Neo4j e rende simmetrico il confronto sui tempi cold), reinserisce i dati, lancia il benchmark in append e infine genera grafici ed Excel.
 
-Lo script referenzia `docker-compose.yml`, gli schemi e gli script Python per nome file semplice, senza prefisso di cartella: lanciarlo così com'è dalla radice del repository fallirebbe nel trovare `neo4j_schema.cypher`, `cassandra_schema.cql` e i vari `.py`, che nel repository vivono rispettivamente in `Database/` e `Python/`. Prima di eseguirlo, aggiorna i percorsi nello script (o copia gli script/schemi in `Istruzioni_bash/`) in modo che coincidano con la struttura attuale.
+Lo script si sposta da solo alla radice del repository all'avvio (`cd "$(dirname "$0")/.."`), quindi trova `Database/`, `Python/`, `Benchmark/` e `Immagini/` senza bisogno di essere lanciato da una cartella particolare:
 
 ```bash
 bash Istruzioni_bash/run_experiments.sh
