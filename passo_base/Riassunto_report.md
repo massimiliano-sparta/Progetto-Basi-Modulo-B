@@ -1,4 +1,4 @@
-## 6. Suggerimenti per il report (15-20 pagine)
+## Riassunto del report 
 
 | Sezione | Contenuto | Punti guida |
 |---|---|---|
