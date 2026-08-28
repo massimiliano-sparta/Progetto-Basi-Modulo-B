@@ -5,7 +5,7 @@ import numpy as np
 from scipy import stats
 import os
 
-RESULTS_FILE = 'benchmark_results.csv'
+RESULTS_FILE = 'Benchmark/benchmark_results.csv'
 DATASETS = ['25', '50', '75', '100']
 
 # Colori distinti
@@ -64,7 +64,7 @@ def main():
         plt.savefig(f'q{q}_avg.png', dpi=150)
         plt.close()
 
-    with pd.ExcelWriter('results.xlsx', engine='openpyxl') as writer:
+    with pd.ExcelWriter('Benchmark/results.xlsx', engine='openpyxl') as writer:
         df.to_excel(writer, sheet_name='Risultati', index=False)
     print("Grafici rigenerati con colori migliori.")
 
