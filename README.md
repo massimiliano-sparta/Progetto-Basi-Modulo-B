@@ -69,6 +69,12 @@ openpyxl==3.1.5
 Dalla radice del repository:
 
 ```bash
+# 0. Creare il venv
+python3 -m venv .venv
+
+# 0.5 Attivare il venv
+source venv/bin/activate
+
 # 1. Installa le dipendenze Python
 pip install -r passo_base/requirements.txt
 
