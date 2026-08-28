@@ -104,12 +104,12 @@ done
 echo ""
 echo "=========================================="
 echo " Generazione grafici e Excel..."
-# FIX: analyze_results.py legge/scrive con percorsi relativi alla cwd
-# ("benchmark_results.csv", "qN_first.png", "results.xlsx"), invariato
-# rispetto all'originale. Lo lanciamo quindi da dentro Benchmark/, dove
-# ora vive il csv, cosi' anche results.xlsx finisce li' insieme ad
-# esso; i soli PNG generati vengono poi spostati in Immagini/, per
-# rispecchiare la struttura di cartelle gia' presente nel repository.
-( cd Benchmark && python ../Python/analyze_results.py )
-mv Benchmark/q*_first.png Benchmark/q*_avg.png Immagini/
+# FIX: analyze_results.py ora legge/scrive Benchmark/benchmark_results.csv
+# e Benchmark/results.xlsx con percorso esplicito (relativo alla radice
+# del repository), ma i PNG restano nomi nudi ("qN_first.png") relativi
+# alla cwd. Va quindi lanciato da qui, dalla radice, non piu' da dentro
+# Benchmark/ come nella versione precedente di questo script: altrimenti
+# cercherebbe Benchmark/Benchmark/benchmark_results.csv e fallirebbe.
+python Python/analyze_results.py
+mv q*_first.png q*_avg.png Immagini/
 echo "Done!"
