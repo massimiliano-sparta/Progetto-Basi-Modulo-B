@@ -104,12 +104,14 @@ done
 echo ""
 echo "=========================================="
 echo " Generazione grafici e Excel..."
-# FIX: analyze_results.py ora legge/scrive Benchmark/benchmark_results.csv
-# e Benchmark/results.xlsx con percorso esplicito (relativo alla radice
-# del repository), ma i PNG restano nomi nudi ("qN_first.png") relativi
-# alla cwd. Va quindi lanciato da qui, dalla radice, non piu' da dentro
-# Benchmark/ come nella versione precedente di questo script: altrimenti
-# cercherebbe Benchmark/Benchmark/benchmark_results.csv e fallirebbe.
+# FIX: analyze_results.py usa percorsi GIA' relativi alla radice del
+# repository (RESULTS_FILE = 'Benchmark/benchmark_results.csv', i PNG
+# vanno in 'Immagini/...', results.xlsx in 'Benchmark/results.xlsx').
+# Va quindi lanciato da qui, dalla radice (dove questo script si trova
+# gia', per via del "cd" in cima al file) — NON da dentro Benchmark/,
+# altrimenti quei percorsi vengono cercati un livello piu' in basso
+# (es. Benchmark/Benchmark/benchmark_results.csv) e falliscono con
+# FileNotFoundError. Non serve nessuno spostamento di file dopo: gli
+# script scrivono gia' tutto nelle cartelle giuste.
 python Python/analyze_results.py
-mv q*_first.png q*_avg.png Immagini/
 echo "Done!"
