@@ -100,10 +100,10 @@ cat Database/neo4j_schema.cypher | docker exec -i flights_neo4j cypher-shell -u 
 python Python/generate_data.py
 
 # 6. Inserisci un dataset nei due DBMS
-python Python/insert_data.py --dataset 100
+python Python/insert_data.py --dataset 25
 
 # 7. Esegui il benchmark su quel dataset (31 esecuzioni × 4 query × 2 DBMS)
-python Python/benchmark.py --dataset 100 --output Benchmark/benchmark_results.csv
+python Python/benchmark.py --dataset 25 --output Benchmark/benchmark_results.csv
 
 # 8. Genera grafici e riepilogo Excel
 python Python/analyze_results.py
