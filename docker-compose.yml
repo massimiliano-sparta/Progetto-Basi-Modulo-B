@@ -1,5 +1,3 @@
-version: "3.8"
-
 # Avvia Neo4j e Cassandra con risorse comparabili, per un confronto equo
 # "a parità di condizioni hardware/software" come richiesto dalla traccia.
 # Regola i limiti di memoria in base al tuo hardware (i7-12700H, 20 thread: puoi
